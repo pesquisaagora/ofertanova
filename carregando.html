@@ -658,7 +658,8 @@
 
                                                 // Redireciona após 2 segundos (totalizando 7 segundos)
                                                 setTimeout(() => {
-                                                    window.location.href = "app.html";
+                                                                                                        const queryString = window.location.search;
+        								            window.location.href = "app.html" + queryString;
                                                 }, 2000); // 2000ms = 2 segundos
                                             }
                                         }, 50); // Atualiza a cada 50ms (5 segundos no total)
