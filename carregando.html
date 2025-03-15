@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
     <script type="text/javascript">
 		(function () {
 			/**
@@ -35,6 +34,25 @@
 			checkURLParameters();
 		})();
 	</script>
+
+    
+	<script>
+		// Script coringa para preservar UTMs em qualquer botão <a>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Obtém a query string completa da URL atual
+			const queryParams = window.location.search;
+			
+			// Seleciona todos os links com a classe 'elementor-button-link'
+			document.querySelectorAll('a.elementor-button-link').forEach(button => {
+				// Atualiza o href de cada link, preservando as UTMs
+				if (queryParams) {
+					const currentUrl = button.getAttribute('href');
+					const separator = currentUrl.includes('?') ? '&' : '?';
+					button.href = currentUrl + separator + queryParams.slice(1);
+				}
+			});
+		});
+		</script>
 
 	<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
 		url="https://appavaliadorpremios.shop/lp/"></script>
@@ -658,7 +676,7 @@
 
                                                 // Redireciona após 2 segundos (totalizando 7 segundos)
                                                 setTimeout(() => {
-                                                                                                        const queryString = window.location.search;
+                                                    const queryString = window.location.search;
         								            window.location.href = "app.html" + queryString;
                                                 }, 2000); // 2000ms = 2 segundos
                                             }
